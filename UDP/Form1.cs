@@ -44,7 +44,7 @@ namespace UDP
         {
             if (listBox1.InvokeRequired)
             {
-                listBox1.BeginInvoke(new Action<string>((s) => listBox1.Items.Add(s)), "<--" + "\n" + message);
+                listBox1.BeginInvoke(new Action<string>((s) => listBox1.Items.Add(s)), "<--" + "\n" + invertStr(message));
             }
            
         }
@@ -68,6 +68,15 @@ namespace UDP
             }
            
         }
-
+        public static string invertStr(string s)
+        {
+            string invs="";
+            while (s.Length != 0)
+            {
+                invs += s.Substring(s.Length-1, 1);
+                s = s.Substring(0, s.Length-1);
+            }
+            return invs;
+        }
     }
 }
