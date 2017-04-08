@@ -19,13 +19,6 @@ namespace UDP
         }
 
 
-        public ClientUdp(int port)
-        {
-            this.udpclient = new UdpClient(port);
-            this.endpoint = null;
-        }
-
-
         public void sendmessage(String datagram)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(datagram);
